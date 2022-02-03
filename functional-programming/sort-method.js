@@ -1,0 +1,55 @@
+/*              Sort an Array Alphabetically using the sort Method
+
+The sort method sorts the elemnts of an array according to the callback function.
+
+for example:*/
+
+function ascendingOrder(arr) {
+    return arr.sort(function(a, b) {
+        return a - b;
+    });
+}
+
+console.log(ascendingOrder([1, 5, 2, 3, 4])); // returns [1, 2, 3, 4, 5];
+
+function reverseAlpha(arr) {
+    return arr.sort((a, b) => {
+        return    (a === b)? 0 
+                    :(b > a)? 1
+                    : -1;
+    })
+}
+console.log(reverseAlpha(["l", "h", "z", "b", "s"])); /* returns ['z', 's', 'l', 'h', 'b'] 
+
+
+JavaScript's default sorting method is by string Unicode point value. which may return unexpected results.
+Therefore, it is encouraged to provide a callback function to specify how to sort the array items. When such 
+a callback function, normally called compareFunction, is supplied, the array elements are sorted occurding 
+to the return value of the compareFunction: If compareFunction(a, b) returns a value less than 0 for two
+elements a nd b, then a will come before b. If compareFunction(a, b) returns a value equal to 0 for two elements a nd b, then a and b will remain unchanged.
+
+Use the sort method in the alphabeticalOrder function to sort the elements of arr in alphabetical order.
+The function should retrun the sorted array.
+
+function alphabeticalOrder(arr) {
+  // Only change code below this line
+
+  return arr
+  // Only change code above this line
+}
+
+alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);*/
+
+function alphabeticalOrder(arr) {
+    return arr.sort((a, b) => {
+        return (a === b)? 0
+            :(a > b)? 1
+            : -1;
+        });
+}
+
+console.log(alphabeticalOrder(["a", "d", "c", "a", "z", "g"])); // returns ["a", "a", "c", "d", "g", "z"].
+
+console.log(alphabeticalOrder(["x", "h", "a", "m", "n", "m"])); // returns ["a", "h", "m", "m", "n", "x"].
+
+console.log(alphabeticalOrder(["a", "a", "a", "a", "x", "t"])); // returns ["a", "a", "a", "a", "t", "x"].
