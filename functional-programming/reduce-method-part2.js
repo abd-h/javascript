@@ -107,7 +107,8 @@ value of 1.
 This gives us an object with all the fruit as keys, each with a value of 1. We want the amount of each 
 fruit to increase if they repeat.
 
-To do this, on our second loop we check if our total contain a key with the current fruit of the reducer. If it does't then we creat it. If it does then we increment the amount by one.*/
+To do this, on our second loop we check if our total contain a key with the current fruit of the 
+reducer. If it does't then we creat it. If it does then we increment the amount by one.*/
 
 const tallyFruit = fruitBasket.reduce((tally, fruit) => {
     (!tally[fruit])? tally[fruit] = 1
@@ -188,7 +189,9 @@ function halve(input) {
 /* For whatever reason, we need to increment, then double, then decrement an amount.
 
 You could write a function that takes an input, and returns (input +1) * 2 - 1.
-The problem is that we know we are going to need to increment the amount three times, then double it, then decrement it, and then halve it at some point in the future. We don't want to have to have to reweite our function wvery time so we going to use reduce ot create a pipeline
+The problem is that we know we are going to need to increment the amount three times, then double it, 
+then decrement it, and then halve it at some point in the future. We don't want to have to have to 
+reweite our function wvery time so we going to use reduce ot create a pipeline
 
 A pipeline is a term used for a list of function that transform some initial value into a funal value.
 Our pipeline will consist of our three functions in the order that we want to use them. */
@@ -213,6 +216,9 @@ let pipeline2 = [
     decrement,
     halve
 ];
+console.log(pipeline2.reduce((total, func) => {
+    return func(total)
+}, 1));
 /*
 The reduce function stays exactly the same.
 
