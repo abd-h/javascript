@@ -221,4 +221,9 @@ This effectively destructuresthe object sent into the function.  This can also b
 const someProfile = ({name: actor, age, nationality, location}) => {
     return{actor}
 }
-console.log(someProfile(profile));// 
+console.log(someProfile(profile));/* {actor: 'James Bond'}
+
+When profileData is passed to the obove function, the values are destructured from the function 
+parameter for use within the function.
+
+Use destructuring assignment within the argument to the function half to send only max and min inside the function.*/
