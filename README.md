@@ -10,7 +10,9 @@
 
 ** Rest parameter with function parameter
 
-** Destructuring
+** Destructuring Assignment
+
+** Tampelate Literals
 
 ## Functional Programming
 
