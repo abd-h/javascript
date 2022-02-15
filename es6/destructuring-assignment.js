@@ -203,7 +203,7 @@ In some cases, you can destructure the object in a function argument itself.
 consider the code below:*/
 
 const profile = {
-    name: "James Bond",
+    name: "James Bond 007",
     age: 40, 
     nationality: "British", 
     location: "London"
@@ -219,11 +219,35 @@ console.log(newProfile); /* returns {name: 'newBond', age: 35, nationality: 'Bri
 This effectively destructuresthe object sent into the function.  This can also be done in-place:*/
 
 const someProfile = ({name: actor, age, nationality, location}) => {
-    return{actor}
+    return {actor};
 }
 console.log(someProfile(profile));/* {actor: 'James Bond'}
 
 When profileData is passed to the obove function, the values are destructured from the function 
 parameter for use within the function.
 
-Use destructuring assignment within the argument to the function half to send only max and min inside the function.*/
+Use destructuring assignment within the argument to the function half to send only max and min inside the function.
+
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+
+// Only change code below this line
+const half = (stats) => (stats.max + stats.min) / 2.0; 
+// Only change code above this line*/
+
+const stats = {
+    max: 56.78, 
+    standard_deviation: 4.34, 
+    madian: 34.85, 
+    min: -0.75, 
+    average: 35.85
+};
+
+const half = ({max, min}) => (max + min) / 2;
+console.log(half(stats));
