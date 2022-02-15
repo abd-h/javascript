@@ -153,7 +153,7 @@ console.log(name); // FizzBuzz
  */
 
 let obj = { self: '123'};
-obj.proto = '456';
+obj.__proto__.proto = '456';
 console.log(obj.self); // "123"
-console.log(obj.proto); // 456
+console.log(obj.proto); //
 
