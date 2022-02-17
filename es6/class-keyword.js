@@ -49,70 +49,93 @@ console.log(carrot.name); // Should display 'carrot'*/
     }
 
     const carrot = new Vegetable("Carrots");
-    console.log(carrot.veggies);
-    /*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-     
-            Classes
-    Classes are a template for creating objects. They encapsulate data with code to work on that 
-    data. Classes in JS are built on prototypes but also have some syntax and semantics that are not shared with ES5 class-like semantics.
+    console.log(carrot.veggies); // Carrots
+ 
+/*::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: 
 
-    Defining Classes
-    Classes are in fact "special functions", and just as you can define function expression and 
-    function declarations, the class sytax has two components: class expression and class declarations.
+Use getters and setters to Control Access to an Object
+You can obtain values from an object and set the value of a property within an object.
 
-    Class declarations 
-    One way to define a class is using a class declaration. To declare a class, you use the class
-    keyword with the name of the class ("Rectangle" here). */
+These are classically called getters and setters.
 
-    class Rectangle {
-        constructor(height, width) {
-            this.height = height;
-            this.width = width;
-        }
+Getter functions are ment to simply return (get) the value of an object's privet variable 
+to the user without the user directly accessing the private variable.
+
+Setter functions are meant to modify (set) the value of an object's privet variable based on the 
+value passed into the setter function. This change could invoke calculations, or even overwritting
+the previous value completely.*/
+
+class Book {
+    constructor(author) {
+        this._author = author;
     }
 
-    /*          Hoisting
-An important difference between function declarations and class declarations is that while 
-functions can be called in code that appeats before thet are defined, classes must be defined 
-before they can be constructed. Code like the following will throw a Refference error:
-
-const p = new Rectangle();
-
-class Rectangle {}
-
-This occurs because while the class is hoisted its values are not initialized.
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-Class expressions
-A class expression is another way to define a class. Class expression can be named or unnamed.
-The name given to a named class expression is local to the class's body. Hovever, it can be accessed via the name property.
-*/
-
-// Unnamed class expression
-let UnnamedRectangle = class {
-    constructor(height, width) {
-        this.height = height;
-        this.width = width;
+    // getter
+    get writer() {
+        return this._author;
     }
-};
-console.log(UnnamedRectangle.name); // Output  "UnnamedRectangle"
 
-// named class expression
-let NamedRectangle = class Rectangle2 {
-    constructor (height, width) {
-        this.height = height;
-        this.width = width;
+    // setter
+    set writer(updatedAuthor) {
+        this._author = updatedAuthor;
     }
-};
-console.log(NamedRectangle.name) // Rectangle2;
+}
+const novel = new Book("anonymous");
+console.log(novel.writer); // anonymous
+novel.writer = "newAuthor";
+console.log(novel.writer); /* newAuthor
 
-/* Note: Class expressions must be declared before they can be used (they are subject to the same hoisting restrictions as decribed in the class declarations section).
+Notice the syntax used to invoked the and setter. They do not even look like functions.
+Getters and setters are important because they hide internal implementation details.
 
-Class body and method definitions
-The body of a class is the part that is in curly brackets {}. This is where you define classe members, such as methods or constructors.
+Note: It is convention to ptocede the name of a private variable with an inderscore (_). 
+However, the practice it self does not make a variable privet.
 
-Strict mode
-The body of a class is executed in the strict mode, i.e., code written here is subject to stricter syntax for increased performance, some otherwise silent errors will be thrown, and certain keywords 
-are reserved for future versions of ECMAScript.
-*/
+Use the class keyword to create a Thermostat class. The constructor accepts a Fahrenheit
+temperture in Celsius.
+
+In the class, create a getter to obtain the temperature in Celsius and a setter to the to set 
+the temperature in Celsius.
+
+Remember the C = 5 / 9 * (F - 32) and F = C * 9.0 / 5 + 32, where F is the value of 
+temperature in Fahrenheit, and C is the value the same temperature in Celsius.
+
+Note: When you implement this, you will track the temperature inside in one scale, 
+either Fahrenheit or Celsius.
+
+This is the power of a getter and a setter. You are creating an API for another user, who 
+can get the correct result regardless of which one you tract.
+
+In other words, you are abstracting implimentation details from the user.
+
+// Only change code below this line
+
+// Only change code above this line
+
+const thermos = new Thermostat(76); // Setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in Celsius*/
+
+class Thermostat {
+    constructor(farenheit) {
+        this._farenheit = farenheit;
+    }
+
+    // getter 
+    get temperature() {
+        return  (5 / 9) * (this._farenheit -32);
+    }
+    set temperature(celsius) {
+        return this._farenheit = (celsius * 9) / 5 + 32;
+    }
+}
+
+const thermos = new Thermostat(76);
+let temp = thermos.temperature;
+console.log(temp);
+thermos.temperature = 26;
+temp = thermos.temperature;
+console.log(temp);
+
 
