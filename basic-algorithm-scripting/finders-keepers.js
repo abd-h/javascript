@@ -3,14 +3,7 @@ Create a function that looks throughh an array arr and returns the first element
 in it that passes a 'truth test'. This means that given an element x, the 'thuth test' is passed if func(x) is true. If no element passes the test, returns */
 
 function findElement(arr, func) {
-    let num = arr.find(a => {
-        if(func(a)) {
-            return a;
-        } else {
-            return undefined
-        }
-    });
-    return num
+    return arr.find(a => func(a));
 }
 console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
 
