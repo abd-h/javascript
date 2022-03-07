@@ -1,23 +1,21 @@
 /*
-Match Anything with Wildcard Period
-Sometimes you won't (or don't need to) know the exact characters in your patterns. Thinking of all words that match, say, a misspelling would take a long time. Luckily, you can save time using the wildcard character: .
+Find One or More Criminals in a Hunt
+Time to pause and test your new regex writing skills. A group of criminals escaped from jail and ran away, but you don't know how many. However, you do know that they stay close together when they are around other people. You are responsible for finding all of the criminals at once.
 
-The wildcard character . will match any one character. The wildcard is also called dot and period. You can use the wildcard character just like any other character in the regex. For example, if you wanted to match hug, huh, hut, and hum, you can use the regex /hu./ to match all four words.
+Here's an example to review how to do this:
 
-let humStr = "I'll hum a song";
-let hugStr = "Bear hug";
-let huRegex = /hu./;
-huRegex.test(humStr);
-huRegex.test(hugStr);
-Both of these test calls would return true.
+The regex /z+/ matches the letter z when it appears one or more times in a row. It would find matches in all of the following strings:
 
+"z"
+"zzzzzz"
+"ABCzzzz"
+"zzzzABC"
+"abczzzzzzzzzzzzzzzzzzzzzabc"
+But it does not find matches in the following strings since there are no letter z characters:
 
-Complete the regex unRegex so that it matches the strings run, sun, fun, pun, nun, and bun. Your regex should use the wildcard character.
+""
+"ABC"
+"abcabc"
+Write a greedy regex that finds one or more criminals within a group of other people. A criminal is represented by the capital letter C.
 
-let exampleStr = "Let's have fun with regular expressions!";
-let unRegex = /change/; // Change this line
-let result = */
-
-let exampleStr = "Let's have fun with regular expressions!";
-let unRegex = /.un/;
-let unResult = unRegex.test(exampleStr)
+ */

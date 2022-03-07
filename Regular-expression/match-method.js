@@ -43,7 +43,8 @@ console.log(testStr2.match(repeatRegex));// ["Repeat", "Repeat", "Repeat"]
 /* Using the regex starRegex, find and extract both Twinkle word from the string 
 twinkleStar.
 
-Note: You can have multiple flags on your regex like /search/gi 
+Note: You can have multiple flags on your regex like /search/gi
+console.log(quoteSample.match(vowelRegex).length); 
 
 let twinkleStar = "Twinkle, twinkle, little star";
 let starRegex = /change/; // Change this line
@@ -81,5 +82,46 @@ let result =
 let exampleStr = "Let's have fun with regular expressions!";
 let unRegex = /.un/;
 let unResult = unRegex.test(exampleStr);
- console.log(unResult);
-console.log(unResult);
+ console.log(unResult); // true
+
+ /********************************************************************
+  
+Match Single Character with Multiple Possibilities
+
+You learned how to match literal patterns (/literal/) and wildcard character (/./). Those are
+the extremes of regular expressions, where one finds exact matches and the other matches everyting.
+There are options that are a balance between the two extreames.
+
+You can search for a literal pattern with some flexibility with character classes. Character classes 
+allow you to define a group of characters you wish to match by placing them inside square ([ and ]) brackets.
+
+For example, you want to match bag, big, and bug but not bog. You can create the regex /b[aiu]g/ to 
+do this. The [aiu] is the character class that will only match the characters a, i, or u.  */
+
+let bagStr = "bag",
+     bigStr = "big",
+     bugStr = "bug", 
+     bogStr = "bog",
+     bgRegex = /b[aiu]g/;
+      console.log(bigStr.match(bgRegex));
+     console.log(bagStr.match(bgRegex));
+     console.log(bugStr.match(bgRegex));
+     console.log(bogStr.match(bgRegex));
+
+/* In order the four match calls would return the values ["big"], ["bag"], ["bog"], and null.
+
+Use a character class with vowels (a, e, i, o, u) in your regex vowelRegex to find all the vowels 
+in the string quoteSample.
+
+Note: Be sure to match both upper- and lowercase vowels.
+
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let vowelRegex = /change/; // Change this line
+let result = vowelRegex; // Change this line
+ */
+
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let vowelRegex = /[aeiou]/gi
+console.log(quoteSample.match(vowelRegex).length); // 25
+
+    
