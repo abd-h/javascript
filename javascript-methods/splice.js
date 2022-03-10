@@ -108,15 +108,7 @@ console.log(myFish3);['angel', 'clown'];
 
 
 function chunkArrayInGroups(arr, size) {
-    // let result = [];
-    // for(let i = 0; i < arr.length; i++) {
-    //     let s = arr.splice(i, size, i)
-    //     result.push(s)
-
-    // }
-    // return result;
     return arr.reduce((a, b, c, d) => {
-        console.log(b);
         a.push(d.splice(c, size, c))
         return a;
     }, []);
