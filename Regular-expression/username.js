@@ -18,4 +18,3 @@ change the regex userCheck to fit the constraints listed above. */
 let username = 'J98000';
 let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d*$/gi;
 console.log(username.match(userCheck));
-
