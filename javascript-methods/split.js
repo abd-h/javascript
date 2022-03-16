@@ -140,3 +140,5 @@ splitString(monthString, comma);
     console.log(splits2);
     console.log(splits3.join("")); // 1 2
     console.log(myString3);
+
+    
