@@ -98,4 +98,6 @@
     let british = "colour";
     let rainbowRegex = /colou?r/;
     console.log(rainbowRegex.test(british));
-    console.log(rainbowRegex.test(american))
+    console.log(rainbowRegex.test(american));
+
+    
