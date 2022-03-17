@@ -14,6 +14,8 @@
 
 ** Tampelate Literals
 
+** Classes
+
 ## Functional Programming
 
 ** Avoid mutations
