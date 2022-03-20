@@ -91,8 +91,80 @@ let result = false; // Change this line
     let reRegex = /change/; // Change this line
     let result = reRegex.test(repeatNum);*/
 
-    let repeatNum = "42 42 42 42";
-    let reRegex = /^(\d+) \1 \1$/g;
+    let repeatNum = "42 42 42";
+    let reRegex = /^(\d+) \1 \1/g;
     let resultRe = reRegex.test(repeatNum);
     console.log(repeatNum.match(reRegex))
-    console.log(resultRe);
+    console.log(resultRe); /* returns true
+    **************************************************************************
+    
+    Use Capture Groups to Search and Replce
+    Searching is useful. However, you can make searching even more powerful when it also changes 
+    (or replaces) the text you match.
+
+    You can search and replace text in a string using .replace() on a string. The inputs fo .replace() is first the regex pattern you want to search for. the second parameter is the string to 
+    replce the match or a function to do something. */
+    
+    let wrongText = "The sky is silver.";
+    let silverRegex = /silver/;
+    let rightText = wrongText.replace(silverRegex, function () {
+      return "blue";  
+    });
+    console.log(rightText);// returns the sky is blue
+    console.log(wrongText.replace(silverRegex, "blue"));
+    
+    /* You can alco access capture groups in the replacement string with dollar signs ($). */
+
+    console.log("Free Camp Code".replace(/(\w+)\s(\w+)\s(\w+)/, "$1 $3 $2")); 
+    // returns Free Code Camp
+
+    /* Write a regex fixRegex using three capture groups that will search for each word
+        in the string one two three. Then update the replaceText variable to replace the string 
+        three two one and assign the result to the result variable. Make sure you are utilizing capture groups in the replacement string using the dollar sign ($) syntax.
+        
+        let str = "one two three";
+        let fixRegex = /change/; // Change this line
+        let replaceText = ""; // Change this line
+        let result = str.replace(fixRegex, replaceText);*/
+
+    let str = "one two three";
+    let fixRegex = /(\w+)\s(\w+)\s(\w+)/;
+    let replaceText = "$3";
+    let fixResult = str.replace(fixRegex, replaceText);
+    console.log(fixResult); /* returns three two one
+    ******************************************************************
+
+    Remove Whitespace from Start and End
+
+    Sometimes whitespace character around string are not wanted but are there. Typical processing 
+    of string is to remove the whitespace at the start and end of it.
+
+    Write a regex and use the appropriate string methods to remove whitespace at the beginning and 
+    end of strings.
+
+    Note: The string.prototype.trim() method would work here, but you'll need to complete this 
+    challenge using regular expressions. 
+    
+    let hello = "   Hello, World!  ";
+    let wsRegex = /change/; // Change this line
+    let result = hello; // Change this line    */
+
+    let hello = " Hello, World! ";
+    let wsRegex = /\s+(\w\D+)\s(\w\D+)\s/g;
+    let wRegex = "$1 $2";
+    let resultW1s = hello.replace(wsRegex, wRegex);
+    console.log(resultW1s.split().join(" "));
+    console.log(hello.length);
+
+    console.log(hello.match(wsRegex));
+    
+    // console.log(hello.replace(wsRegex, ""));
+
+        
+        
+        
+        
+
+
+
+
