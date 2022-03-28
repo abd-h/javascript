@@ -312,3 +312,5 @@ console.log(countOnline(users));
             return userObj.data.friends;
         }
         console.log(addFriend(frUser, "Pete")) // ['Sam', 'Kira', 'Tomo', 'Pete']
+
+                                    // ******   The End ******
