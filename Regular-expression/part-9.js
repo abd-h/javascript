@@ -150,9 +150,9 @@ let result = false; // Change this line
     let result = hello; // Change this line    */
 
     let hello = " Hello, World! ";
-    let wsRegex = /\s+(\w\D+)\s(\w\D+)\s/g;
+    let wsRegex = /\s+(\w\D+)\s(\w\D+)\s+/g;
     let wRegex = "$1 $2";
-    let resultW1s = hello.replace(wsRegex, wRegex);
+    let resultW1s = hello.replace(wsRegex, wRegex);// Hello, World!
     console.log(resultW1s.split().join(" "));
     console.log(hello.length);
 

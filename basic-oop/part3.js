@@ -255,5 +255,12 @@ console.log(boat.glide());
             }
         }
     }())
-    motionModule.glideMixin3(boat);
-    console.log(boat.glide3());
+   
+/*  Note that you have an immediately invoked function expression (IIFE) that returns an object 
+    motionModule. This returned object contain all of the mixin behaviors as properties of the 
+    object. The advantage of the module pattern is that all of the motion behaviors can be packaged 
+    into a single object that can then be used by other parts of your code. Here is an example 
+    using it: */
+
+     motionModule.glideMixin3(boat);
+    console.log(boat.glide3()); // gliding all the way to the sea
