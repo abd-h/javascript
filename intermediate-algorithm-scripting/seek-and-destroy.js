@@ -6,13 +6,12 @@
     
     function destroyer(arr) {
         let newArgs = [...arguments].slice(1);
-       
-      return arr.reduce((a, b) => {
+        return arr.reduce((a, b) => {
           if(newArgs.indexOf(b) === -1) {
               a.push(b);
           }
           return a;
-      }, [])
+        }, []);
     }
     console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
 
