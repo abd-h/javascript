@@ -22,7 +22,7 @@
         let aft = after[0].toUpperCase().concat(after.split("").slice(1).join(''));
         let bef = before[0].toUpperCase().concat(before.split("").slice(1).join(""))
         let s = str.split(" ");
-        for(let i = 0; i < str.split(" ").length; i++){
+        for(let i = 0; i < s.length; i++){
            if(s[i] == before && before[0] == before[0].toLowerCase()) {
                return str.replace(s[i], after.toLowerCase());
            } else if(s[i] == before && before == bef) {
