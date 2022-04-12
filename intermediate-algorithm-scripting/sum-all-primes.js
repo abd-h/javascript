@@ -9,27 +9,6 @@
     2. Create a for loop
     */
 
-    // function isPrime(num) {
-    //     for(let i = 2; i < num; i++) {
-    //         if(num % i === 0) {
-    //             return false;
-    //         } 
-    //     }
-    //     return true;
-    // }
-    // console.log(isPrime(9))
-    
-
-    // function sumPrimes(num) {
-    //     let s = 2;
-    //     for(let i = 3; i <= num; i+= 2){
-    //        if(isPrime(i)) {
-    //         s += i;
-    //        } 
-    //     }
-    //     return s;
-    // }
-    // console.log(sumPrimes(977));
 
     function isPrime(num) {
         for(let i = 2; i < num; i++) {
