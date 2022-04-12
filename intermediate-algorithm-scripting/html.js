@@ -2,10 +2,12 @@
     Convert the characters &, <, >, "(double)", and '(apostrophe), in a string to their 
     corroesponding HTML entities 
     
-    1. Declare new variable called newStr and assign copy of  str*/
+    1. Declare new variable called newStr and assign copy of  str
+    2. I used the reduce() method to loop through*/
 
 
     function convertHTML(str) {
+        // Using if statement
         // let newStr = str.split(" ").slice();
         // return newStr.reduce((result, element, index, array) => {
         //     if(element == "&") {
@@ -26,7 +28,7 @@
         //     return result
         // }, "");
 
-
+        // Using ternary Operator
         let newStr = str.split(" ").slice();
         return newStr.reduce((result, element, index, array) => {
             (element == "&")? result = array.join(" ").replace(/&/, "&amp;")
